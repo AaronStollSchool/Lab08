@@ -41,19 +41,23 @@ public class TwoPointsTest {
         testPoints.randomValue(0);
         testPoints.randomValue(1);
 
-        Point p1A = testPoints.getPoint(0);
-        Point p2A = testPoints.getPoint(1);
+        int p1AX = testPoints.getPoint(0).x;
+        int p1AY = testPoints.getPoint(0).y;
+        int p2AX = testPoints.getPoint(1).x;
+        int p2AY = testPoints.getPoint(1).y;
 
         testPoints.randomValue(0);
         testPoints.randomValue(1);
 
-        Point p1B = testPoints.getPoint(0);
-        Point p2B = testPoints.getPoint(1);
+        int p1BX = testPoints.getPoint(0).x;
+        int p1BY = testPoints.getPoint(0).y;
+        int p2BX = testPoints.getPoint(1).x;
+        int p2BY = testPoints.getPoint(1).y;
 
-        assertNotEquals(p1A.x, p1B.x);
-        assertNotEquals(p1A.y, p1B.y);
-        assertNotEquals(p2A.x, p2B.x);
-        assertNotEquals(p2B.y, p2B.y);
+        assertNotEquals(p1AX, p1BX);
+        assertNotEquals(p1AY, p1BY);
+        assertNotEquals(p2AX, p2BX);
+        assertNotEquals(p2AY, p2BY);
     }
 
     /**  */
