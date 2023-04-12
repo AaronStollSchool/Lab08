@@ -43,7 +43,8 @@ public class TwoPoints {
 
     /** copy the values in one points to the other */
     public void copy(int srcIndex, int destIndex) {
-        points[destIndex] = points[srcIndex];
+        points[destIndex].x = points[srcIndex].x;
+        points[destIndex].y = points[srcIndex].y;
     }
 
     /** calculates the distance between the two points rounded to the nearest integer */
@@ -67,7 +68,7 @@ public class TwoPoints {
         int xDiff = points[0].x - points[1].x;
         int yDiff = points[0].y - points[1].y;
 
-        result = xDiff / yDiff;
+        result = yDiff / xDiff;
         return result;
     }
 
