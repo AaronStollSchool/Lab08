@@ -34,13 +34,51 @@ public class TwoPointsTest {
         assertEquals(5, p2.y);
     }
 
-
+    /**  */
     @Test
-    public void randomValue() {
+    public void randomValue() throws Exception {
+        TwoPoints testPoints = new TwoPoints();
+        testPoints.randomValue(0);
+        testPoints.randomValue(1);
+
+        Point p1 = testPoints.getPoint(0);
+        Point p2 = testPoints.getPoint(1);
+
+        Point p1A = p1;
+        Point p2A = p2;
+
+        testPoints.randomValue(0);
+        testPoints.randomValue(1);
+
+        p1 = testPoints.getPoint(0);
+        p2 = testPoints.getPoint(1);
+
+        Point p1B = p1;
+        Point p2B = p2;
+
+        assertNotEquals(p1A.x, p1B.x);
+        assertNotEquals(p1A.y, p1B.y);
+        assertNotEquals(p2A.x, p2B.x);
+        assertNotEquals(p2B.y, p2B.y);
     }
 
+    /**  */
     @Test
-    public void setOrigin() {
+    public void setOrigin() throws Exception {
+        TwoPoints testPoints = new TwoPoints();
+        testPoints.setPoint(0,5,10);
+        testPoints.setPoint(1,3,2);
+
+        testPoints.setOrigin(0);
+        testPoints.setOrigin(1);
+        Point p1 = testPoints.getPoint(0);
+        Point p2 = testPoints.getPoint(1);
+
+        assertEquals(0, p1.x);
+        assertEquals(0, p1.y);
+        assertEquals(0, p2.x);
+        assertEquals(0, p2.y);
+
     }
 
     @Test
