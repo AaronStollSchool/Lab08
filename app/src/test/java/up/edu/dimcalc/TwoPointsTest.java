@@ -41,20 +41,14 @@ public class TwoPointsTest {
         testPoints.randomValue(0);
         testPoints.randomValue(1);
 
-        Point p1 = testPoints.getPoint(0);
-        Point p2 = testPoints.getPoint(1);
-
-        Point p1A = p1;
-        Point p2A = p2;
+        Point p1A = testPoints.getPoint(0);
+        Point p2A = testPoints.getPoint(1);
 
         testPoints.randomValue(0);
         testPoints.randomValue(1);
 
-        p1 = testPoints.getPoint(0);
-        p2 = testPoints.getPoint(1);
-
-        Point p1B = p1;
-        Point p2B = p2;
+        Point p1B = testPoints.getPoint(0);
+        Point p2B = testPoints.getPoint(1);
 
         assertNotEquals(p1A.x, p1B.x);
         assertNotEquals(p1A.y, p1B.y);
