@@ -82,14 +82,26 @@ public class TwoPointsTest {
     @Test
     public void copy() {
         TwoPoints testPoints = new TwoPoints();
+        testPoints.setPoint(0, -4, 6);
+        testPoints.setPoint(1, 3, 4);
+
         testPoints.copy(0,1);
-        testPoints.copy(1,0);
+
         Point p1 = testPoints.getPoint(0);
         Point p2 = testPoints.getPoint(1);
-        assertEquals(0, p1.x);
-        assertEquals(0, p1.y);
-        assertEquals(0, p2.x);
-        assertEquals(0, p2.y);
+
+        assertEquals(-4, p1.x);
+        assertEquals(6, p1.y);
+        assertEquals(-4, p2.x);
+        assertEquals(6, p2.y);
+
+        testPoints.setPoint(1, 3, 4);
+        p2 = testPoints.getPoint(1);
+
+        assertEquals(-4, p1.x);
+        assertEquals(6, p1.y);
+        assertEquals(3, p2.x);
+        assertEquals(4, p2.y);
     }
 
     @Test
@@ -100,8 +112,8 @@ public class TwoPointsTest {
         double distance = testPoints.distance();
         assertEquals(5, distance, 0.001);
 
-        testPoints.setPoint(0, 2, 4);
-        testPoints.setPoint(1,6,10);
+        testPoints.setPoint(0, -2, -4);
+        testPoints.setPoint(1,-6,-10);
         distance = testPoints.distance();
         assertEquals(7.21110255093, distance, 0.01);
     }
